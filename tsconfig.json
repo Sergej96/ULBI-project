@@ -2,7 +2,7 @@
   "compilerOptions": {
     "outDir": "./dist/", //куда будет производиться сборка
     "noImplicitAny": true, //Не позволяет использовать переменные без типа
-    "module": "es6", //
+    "module": "esnext", //
     "target": "es5", // В какую спецификацию JS компилировать код
     "jsx": "react-jsx",
     "allowJs": true,
