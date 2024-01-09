@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/", //куда будет производиться сборка
+    "noImplicitAny": true, //Не позволяет использовать переменные без типа
+    "module": "es6", //
+    "target": "es5", // В какую спецификацию JS компилировать код
+    "jsx": "react-jsx",
+    "allowJs": true,
+
+    "allowSyntheticDefaultImports": true, //разрешить импорт по умолчанию
+    "esModuleInterop": true, //
+    "moduleResolution": "node" //определяет какие будут импорты
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
+}
