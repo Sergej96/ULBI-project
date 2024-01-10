@@ -6,6 +6,10 @@
     "target": "es5", // В какую спецификацию JS компилировать код
     "jsx": "react-jsx",
     "allowJs": true,
+    "baseUrl": "./",
+    "paths": {
+      "*": ["./src/*"]
+    },
 
     "allowSyntheticDefaultImports": true, //разрешить импорт по умолчанию
     "esModuleInterop": true, //

@@ -1,12 +1,10 @@
 import { Route, Routes } from "react-router-dom";
 import "./styles/index.scss";
-import Main from "./pages/Main/Main";
 import { Link } from "react-router-dom";
-import React, { Suspense } from "react";
-import { useTheme } from "./theme/useTheme";
-import { classNames } from "./helpers/classNames";
-
-const Counter = React.lazy(() => import("./components/Counter"));
+import { Suspense } from "react";
+import { Main } from "pages";
+import { classNames } from "shared/lib/helpers/classNames";
+import { useTheme } from "./providers/ThemeProvider";
 
 const App = () => {
   const { theme, toggleTheme } = useTheme();
@@ -20,7 +18,6 @@ const App = () => {
       <Suspense fallback={<h2>Loading...</h2>}>
         <Routes>
           <Route path="/" element={<Main />} />
-          <Route path="/counter" element={<Counter />} />
         </Routes>
       </Suspense>
     </div>
