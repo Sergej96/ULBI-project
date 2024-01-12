@@ -3,6 +3,7 @@ import cls from "./Sidebar.module.scss";
 import { classNames } from "shared/lib/helpers/classNames";
 import AppButton from "shared/ui/AppButton/AppButton";
 import ThemeSwitcher from "shared/ui/ThemeSwitcher/ThemeSwitcher";
+import LangSwitcher from "shared/ui/LangSwithcer/LangSwitcher";
 
 interface SidebarProps {}
 
@@ -16,6 +17,7 @@ const Sidebar: FC<SidebarProps> = () => {
       <AppButton onClick={onToggle}>toggle sidebar</AppButton>
       <div className={cls.switchers}>
         <ThemeSwitcher />
+        <LangSwitcher className="ps-2" />
       </div>
     </div>
   );
