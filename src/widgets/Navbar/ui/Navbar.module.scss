@@ -1,0 +1,13 @@
+.navbar {
+  display: flex;
+  padding: 20px 10px;
+  background: var(--inverted-bg-color);
+}
+
+.links {
+  display: flex;
+  gap: 10px;
+  margin-left: auto;
+  font: var(--font-l);
+  color: var(--inverted-primary-color);
+}
