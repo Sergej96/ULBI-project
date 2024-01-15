@@ -31,11 +31,22 @@ export function buildLoaders(isDev: boolean): webpack.RuleSetRule[] {
     ],
   };
 
+  const babelLoader = {
+    test: /\.m?(js|jsx|ts|tsx)$/,
+    exclude: /node_modules/,
+    use: {
+      loader: "babel-loader",
+      options: {
+        presets: ["@babel/preset-env"],
+      },
+    },
+  };
+
   const typescriptLoader = {
     test: /\.tsx?$/,
     use: "ts-loader",
     exclude: /node_modules/,
-  }; //какие файлы будут проходить через ts-loader(КОМПИЛЯТОР)
+  };
 
-  return [svgLoader, typescriptLoader, cssLoader];
+  return [svgLoader, babelLoader, typescriptLoader, cssLoader, fileLoader];
 }
