@@ -15,6 +15,6 @@ if (rootElement) {
           <App />
         </ThemeProvider>
       </BrowserRouter>
-    </StrictMode>
+    </StrictMode>,
   );
 }
