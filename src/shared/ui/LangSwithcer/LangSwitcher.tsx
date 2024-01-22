@@ -1,8 +1,8 @@
-import { FC } from "react";
-import { useTranslation } from "react-i18next";
-import cls from "./LangSwitcher.module.scss";
-import { classNames } from "shared/lib/helpers/classNames";
-import AppButton from "../AppButton/AppButton";
+import { FC } from 'react';
+import { useTranslation } from 'react-i18next';
+import { classNames } from 'shared/lib/helpers/classNames';
+import cls from './LangSwitcher.module.scss';
+import AppButton from '../AppButton/AppButton';
 
 interface LangSwitcherProps {
   className?: string;
@@ -11,14 +11,14 @@ interface LangSwitcherProps {
 const LangSwitcher: FC<LangSwitcherProps> = ({ className }) => {
   const { t, i18n } = useTranslation();
   const onToggle = () => {
-    i18n.changeLanguage(i18n.language === "ru" ? "en" : "ru");
+    i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
   };
   return (
     <AppButton
       className={classNames(cls.langSwitcher, {}, [className])}
       onClick={onToggle}
     >
-      {t("lang_button")}
+      {t('lang_button')}
     </AppButton>
   );
 };

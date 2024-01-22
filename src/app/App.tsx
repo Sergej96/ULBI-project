@@ -1,16 +1,16 @@
-import "./styles/index.scss";
-import "shared/config/i18n/i18n";
-import { classNames } from "shared/lib/helpers/classNames";
-import { useTheme } from "./providers/ThemeProvider";
-import { AppRouter } from "./providers/router";
-import { Navbar, Sidebar } from "widgets";
-import { Suspense } from "react";
+import './styles/index.scss';
+import 'shared/config/i18n/i18n';
+import { classNames } from 'shared/lib/helpers/classNames';
+import { Navbar, Sidebar } from 'widgets';
+import { Suspense } from 'react';
+import { useTheme } from './providers/ThemeProvider';
+import { AppRouter } from './providers/router';
 
-const App = () => {
+function App() {
   const { theme } = useTheme();
 
   return (
-    <div className={classNames("app", {}, [theme])}>
+    <div className={classNames('app', {}, [theme])}>
       <Suspense>
         <Navbar />
         <div className="content-page">
@@ -20,6 +20,6 @@ const App = () => {
       </Suspense>
     </div>
   );
-};
+}
 
 export default App;

@@ -1,8 +1,8 @@
-import webpack from "webpack";
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import { BuildOptions } from "./types/config";
-import ReactRefreshWebpackPlugin from "@pmmmwh/react-refresh-webpack-plugin";
+import webpack from 'webpack';
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
+import { BuildOptions } from './types/config';
 
 export function buildPlugins({
   paths,
@@ -17,8 +17,8 @@ export function buildPlugins({
       template: paths.html,
     }),
     new MiniCssExtractPlugin({
-      filename: "css/[name].[hash:8].css",
-      chunkFilename: "css/[name].[hash:8].css",
+      filename: 'css/[name].[hash:8].css',
+      chunkFilename: 'css/[name].[hash:8].css',
     }),
   ];
 
