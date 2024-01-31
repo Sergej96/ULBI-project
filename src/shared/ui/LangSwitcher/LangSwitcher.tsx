@@ -1,6 +1,6 @@
 import { FC } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/helpers/classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './LangSwitcher.module.scss';
 import AppButton from '../AppButton/AppButton';
 
