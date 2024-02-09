@@ -1,44 +1,51 @@
 {
-  "env": {
-    "browser": true,
-    "es2021": true,
-    "jest": true
-  },
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended",
-    "airbnb",
-    "plugin:i18next/recommended"
-  ],
-  "parser": "@typescript-eslint/parser",
-  "parserOptions": {
-    "ecmaVersion": "latest",
-    "sourceType": "module"
-  },
-  "plugins": ["@typescript-eslint", "react", "i18next"],
-  "rules": {
-    "@typescript-eslint/no-unused-vars": "warn",
-    "react/jsx-runtime": "off",
-    "react/react-in-jsx-scope": "off",
-    "react/jsx-filename-extension": [
-      2,
-      { "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+    "env": {
+        "browser": true,
+        "es2021": true,
+        "jest": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:react/recommended",
+        "airbnb",
+        "plugin:i18next/recommended",
+        "plugin:storybook/recommended"
     ],
-    "no-unused-vars": "warn",
-    "import/no-unresolved": "off",
-    "react/function-component-definition": "off",
-    "import/prefer-default-export": "off",
-    "react/require-default-props": "off",
-    "react/jsx-props-no-spreading": "warn",
-    "no-shadow": "off",
-    "import/extensions": "off",
-    "import/no-extraneous-dependencies": "off",
-    "no-underscore-dangle": "off",
-    "comma-dangle": "warn",
-    "i18next/no-literal-string": [{ "markupOnly": true }]
-  },
-  "globals": {
-    "__IS_DEV__": true
-  }
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module"
+    },
+    "plugins": ["@typescript-eslint", "react", "i18next"],
+    "rules": {
+        "@typescript-eslint/no-unused-vars": "warn",
+        "react/jsx-runtime": "off",
+        "react/react-in-jsx-scope": "off",
+        "react/jsx-filename-extension": [
+            2,
+            {
+                "extensions": [".js", ".jsx", ".ts", ".tsx"]
+            }
+        ],
+        "no-unused-vars": "warn",
+        "import/no-unresolved": "off",
+        "react/function-component-definition": "off",
+        "import/prefer-default-export": "off",
+        "react/require-default-props": "off",
+        "react/jsx-props-no-spreading": "warn",
+        "no-shadow": "off",
+        "import/extensions": "off",
+        "import/no-extraneous-dependencies": "off",
+        "no-underscore-dangle": "off",
+        "comma-dangle": "warn",
+        "i18next/no-literal-string": [
+            {
+                "markupOnly": true
+            }
+        ]
+    },
+    "globals": {
+        "__IS_DEV__": true
+    }
 }
