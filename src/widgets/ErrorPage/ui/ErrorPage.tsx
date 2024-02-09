@@ -1,8 +1,8 @@
 import { FC } from 'react';
 import AppButton from 'shared/ui/AppButton/AppButton';
-import cls from './ErrorPage.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
+import cls from './ErrorPage.module.scss';
 
 interface ErrorPageProps {}
 

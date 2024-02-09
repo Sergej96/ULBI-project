@@ -1,7 +1,5 @@
 import React from 'react';
 
-const Svg = () => {
-  return <div />;
-};
+const Svg = () => <div />;
 
 export default Svg;

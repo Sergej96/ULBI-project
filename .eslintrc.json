@@ -40,8 +40,10 @@
         "no-underscore-dangle": "off",
         "comma-dangle": "warn",
         "i18next/no-literal-string": [
+            "error",
             {
-                "markupOnly": true
+                "markupOnly": true,
+                "ignoreAttribute": ["data-testid", "to"]
             }
         ]
     },

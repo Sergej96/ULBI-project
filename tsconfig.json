@@ -1,27 +1,28 @@
 {
-  "compilerOptions": {
-    "outDir": "./dist/", //куда будет производиться сборка
-    "noImplicitAny": true, //Не позволяет использовать переменные без типа
-    "module": "esnext", //
-    "target": "es5", // В какую спецификацию JS компилировать код
-    "jsx": "react-jsx",
-    "allowJs": true,
-    "baseUrl": "./",
-    "paths": {
-      "*": ["./src/*"]
-    },
-
-    "allowSyntheticDefaultImports": true, //разрешить импорт по умолчанию
-    "esModuleInterop": true, //
-    "moduleResolution": "node" //определяет какие будут импорты
-  },
-  "ts-node": {
     "compilerOptions": {
-      "module": "CommonJS"
-    }
-  },
-  "include": [
-    "./**/*",
-    "./config/jest/setupTests.ts"
-  ],
+        "outDir": "./dist/", //куда будет производиться сборка
+        "noImplicitAny": true, //Не позволяет использовать переменные без типа
+        "module": "esnext", //
+        "target": "es5", // В какую спецификацию JS компилировать код
+        "jsx": "react-jsx",
+        "allowJs": true,
+        "baseUrl": "./",
+        "paths": {
+            "*": ["./src/*"]
+        },
+
+        "allowSyntheticDefaultImports": true, //разрешить импорт по умолчанию
+        "esModuleInterop": true, //
+        "moduleResolution": "node" //определяет какие будут импорты
+    },
+    "ts-node": {
+        "compilerOptions": {
+            "module": "CommonJS"
+        }
+    },
+    "include": [
+        "./config/jest/setupTests.ts",
+        "./src/**/*.ts",
+        "./src/**/*.tsx"
+    ]
 }

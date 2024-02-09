@@ -4,10 +4,9 @@ import { Route, Routes } from 'react-router-dom';
 import { routeConfig } from 'shared/config/routeConfig/routeConfig';
 import { PageLoader } from 'widgets';
 
-
 function AppRouter() {
   return (
-    <Suspense fallback={<PageLoader/>}>
+    <Suspense fallback={<PageLoader />}>
       <div className="page-wrapper">
         <Routes>
           {routeConfig.map(({ path, element }) => (
