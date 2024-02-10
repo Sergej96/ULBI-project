@@ -7,7 +7,6 @@ const config: StorybookConfig = {
     '@storybook/addon-essentials',
     '@storybook/addon-onboarding',
     '@storybook/addon-interactions',
-    '@storybook/addon-styling-webpack',
   ],
   framework: {
     name: '@storybook/react-webpack5',
@@ -17,6 +16,15 @@ const config: StorybookConfig = {
       },
     },
   },
+  swc: (config, option) => ({
+    jsc: {
+      transform: {
+        react: {
+          runtime: 'automatic'
+        }
+      }
+    }
+  }),
   docs: {
     autodocs: 'tag',
   },

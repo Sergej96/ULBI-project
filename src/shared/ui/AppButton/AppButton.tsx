@@ -3,26 +3,28 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './AppButton.module.scss';
 
 export enum ThemeButton {
-  CLEAR = 'clear',
+    PRIMARY = 'primary',
+    CLEAR = 'clear',
+    OUTLINE = 'outline',
 }
 
 interface AppButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  theme?: ThemeButton;
+    theme?: ThemeButton;
 }
 
 const AppButton: FC<AppButtonProps> = ({
-  children,
-  className,
-  theme = ThemeButton.CLEAR,
-  ...otherProps
+    children,
+    className,
+    theme = ThemeButton.CLEAR,
+    ...otherProps
 }) => (
-  <button
-    type="button"
-    className={classNames(cls.button, {}, [cls[theme], className])}
-    {...otherProps}
-  >
-    {children}
-  </button>
+    <button
+        type="button"
+        className={classNames(cls.button, {}, [cls[theme], className])}
+        {...otherProps}
+    >
+        {children}
+    </button>
 );
 
 export default AppButton;

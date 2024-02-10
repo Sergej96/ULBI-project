@@ -6,20 +6,20 @@ import DarkIcon from 'shared/assets/icons/theme-dark.svg';
 import AppButton from '../AppButton/AppButton';
 
 interface ThemeSwitcherProps {
-  className?: string;
+    className?: string;
 }
 
 const ThemeSwitcher: FC<ThemeSwitcherProps> = ({ className }) => {
-  const { theme, toggleTheme } = useTheme();
+    const { theme, toggleTheme } = useTheme();
 
-  return (
-    <AppButton
-      onClick={toggleTheme}
-      className={classNames('', {}, [className])}
-    >
-      {theme === Theme.DEFAULT ? <LightIcon /> : <DarkIcon />}
-    </AppButton>
-  );
+    return (
+        <AppButton
+            onClick={toggleTheme}
+            className={classNames('', {}, [className])}
+        >
+            {theme === Theme.DEFAULT ? <LightIcon /> : <DarkIcon />}
+        </AppButton>
+    );
 };
 
 export default ThemeSwitcher;

@@ -13,7 +13,7 @@
         "stylelint": "npx stylelint \"**/*.scss\"",
         "stylelint:fix": "npx stylelint \"**/*.scss\" --fix",
         "sb": "storybook dev -p 6006 -c ./config/storybook",
-        "build-sb": "storybook build"
+        "build-sb": "storybook build -c ./config/storybook"
     },
     "author": "",
     "license": "ISC",
