@@ -21,13 +21,15 @@ export function buildPlugins({
             filename: 'css/[name].[hash:8].css',
             chunkFilename: 'css/[name].[hash:8].css',
         }),
-        new BundleAnalyzerPlugin({
-            openAnalyzer: false,
-        }),
     ];
 
     if (isDev) {
         plugins.push(new ReactRefreshWebpackPlugin());
+        plugins.push(
+            new BundleAnalyzerPlugin({
+                openAnalyzer: false,
+            }),
+        );
     }
 
     return plugins;
