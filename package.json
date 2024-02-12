@@ -10,12 +10,13 @@
         "test:unit": "jest --config ./config/jest/jest.config.ts",
         "test:ui": "npx loki test",
         "test:ui:ok": "npx loki approve",
+        "test:ui:ci": "npx loki --requireReference --reactUri file:./storybook-static",
         "lint": "eslint \"**/*.{ts,tsx}\"",
         "lint:fix": "eslint \"**/*.{ts,tsx}\" --fix",
         "lint:style": "npx stylelint \"**/*.scss\"",
         "lint:style:fix": "npx stylelint \"**/*.scss\" --fix",
         "sb": "storybook dev -p 6006 -c ./config/storybook",
-        "s:build": "storybook build -c ./config/storybook"
+        "sb:build": "storybook build -c ./config/storybook"
     },
     "author": "",
     "license": "ISC",
