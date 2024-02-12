@@ -13,7 +13,9 @@ function Main() {
     return (
         <div>
             {t('title')}
-            <AppButton onClick={() => setIsError(true)}>Вызвать ошибку</AppButton>
+            <AppButton onClick={() => setIsError(true)}>
+                {t('btn_error')}
+            </AppButton>
         </div>
     );
 }
