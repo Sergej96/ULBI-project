@@ -14,13 +14,13 @@ interface AppLinkProps extends LinkProps {
 }
 
 const AppLink: FC<AppLinkProps> = ({
-  to,
-  theme = ThemeLink.PRIMARY,
-  children,
+    to,
+    theme = ThemeLink.PRIMARY,
+    children,
 }) => (
-  <Link to={to} className={classNames('app-link', {}, [cls[theme]])}>
-    {children}
-  </Link>
+    <Link to={to} className={classNames('app-link', {}, [cls[theme]])}>
+        {children}
+    </Link>
 );
 
 export default AppLink;

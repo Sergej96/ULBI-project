@@ -9,18 +9,18 @@ interface LangSwitcherProps {
 }
 
 const LangSwitcher: FC<LangSwitcherProps> = ({ className }) => {
-  const { t, i18n } = useTranslation();
-  const onToggle = () => {
-    i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
-  };
-  return (
-    <AppButton
-      className={classNames(cls.langSwitcher, {}, [className])}
-      onClick={onToggle}
-    >
-      {t('lang_button')}
-    </AppButton>
-  );
+    const { t, i18n } = useTranslation();
+    const onToggle = () => {
+        i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
+    };
+    return (
+        <AppButton
+            className={classNames(cls.langSwitcher, {}, [className])}
+            onClick={onToggle}
+        >
+            {t('lang_button')}
+        </AppButton>
+    );
 };
 
 export default LangSwitcher;

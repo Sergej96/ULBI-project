@@ -28,6 +28,9 @@
                 "extensions": [".js", ".jsx", ".ts", ".tsx"]
             }
         ],
+        "indent": ["error", 4],
+        "react/jsx-indent": ["error", 4],
+        "react/jsx-indent-props": ["error", 4],
         "no-unused-vars": "warn",
         "import/no-unresolved": "off",
         "react/function-component-definition": "off",
@@ -39,6 +42,8 @@
         "import/no-extraneous-dependencies": "off",
         "no-underscore-dangle": "off",
         "comma-dangle": "warn",
+        "linebreak-style": ["warn", "windows"],
+        "import/order": ["off"],
         "i18next/no-literal-string": [
             "error",
             {

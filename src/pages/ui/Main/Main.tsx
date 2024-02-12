@@ -3,19 +3,19 @@ import { useTranslation } from 'react-i18next';
 import AppButton from 'shared/ui/AppButton/AppButton';
 
 function Main() {
-  const [isError, setIsError] = useState(false);
-  useEffect(() => {
-    if (isError) {
-      throw new Error();
-    }
-  }, [isError]);
-  const { t } = useTranslation('main');
-  return (
-    <div>
-      {t('title')}
-      <AppButton onClick={() => setIsError(true)}>Вызвать ошибку</AppButton>
-    </div>
-  );
+    const [isError, setIsError] = useState(false);
+    useEffect(() => {
+        if (isError) {
+            throw new Error();
+        }
+    }, [isError]);
+    const { t } = useTranslation('main');
+    return (
+        <div>
+            {t('title')}
+            <AppButton onClick={() => setIsError(true)}>Вызвать ошибку</AppButton>
+        </div>
+    );
 }
 
 export default Main;

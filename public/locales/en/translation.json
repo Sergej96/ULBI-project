@@ -1,5 +1,7 @@
 {
-  "lang_button": "Translate on ru",
-  "error_page": "Something went wrong.",
-  "reload_page": "Reload page"
+    "lang_button": "Translate on ru",
+    "error_page": "Something went wrong.",
+    "reload_page": "Reload page",
+    "main": "Main",
+    "about": "About"
 }

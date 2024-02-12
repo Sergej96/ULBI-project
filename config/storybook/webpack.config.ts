@@ -1,4 +1,5 @@
-import webpack, { RuleSetRule } from 'webpack';
+/* eslint-disable no-param-reassign */
+import webpack from 'webpack';
 import { BuildPaths } from '../build/types/config';
 import path from 'path';
 import buildCssLoader from '../build/loaders/buildCssLoader';
@@ -13,11 +14,11 @@ export default ({ config }: { config: webpack.Configuration }) => {
     };
 
     if (config.module?.rules) {
-        config.module.rules = config.module.rules.map((rule: any) => {
+        config.module.rules = config.module.rules.map((rule) => {
             if (
-                rule &&
-                typeof rule !== 'string' &&
-                /svg/.test(rule.test as string)
+                rule
+                && typeof rule !== 'string'
+                && /svg/.test(rule.test as string)
             ) {
                 return { ...rule, exclude: /\.svg/ };
             }

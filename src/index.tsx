@@ -8,16 +8,16 @@ import App from './app/App';
 const rootElement = document.getElementById('root');
 
 if (rootElement) {
-  const root = ReactDOM.createRoot(rootElement);
-  root.render(
-    <StrictMode>
-      <BrowserRouter>
-        <ErrorBoundary>
-          <ThemeProvider>
-            <App />
-          </ThemeProvider>
-        </ErrorBoundary>
-      </BrowserRouter>
-    </StrictMode>,
-  );
+    const root = ReactDOM.createRoot(rootElement);
+    root.render(
+        <StrictMode>
+            <BrowserRouter>
+                <ErrorBoundary>
+                    <ThemeProvider>
+                        <App />
+                    </ThemeProvider>
+                </ErrorBoundary>
+            </BrowserRouter>
+        </StrictMode>,
+    );
 }
