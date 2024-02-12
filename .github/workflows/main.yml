@@ -22,7 +22,7 @@ jobs:
             - name: install modules
               run: npm install
             - name: build production project
-              run: npm run buil:prod
+              run: npm run build:prod
             - name: linting typescript
               run: npm run lint
             - name: linting css
