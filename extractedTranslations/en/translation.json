@@ -1,4 +1,10 @@
 {
+  "about": "about",
+  "btn_error": "btn_error",
+  "error_page": "error_page",
   "lang_button": "",
+  "lang_button_short": "lang_button_short",
+  "main": "main",
+  "reload_page": "reload_page",
   "title": ""
 }

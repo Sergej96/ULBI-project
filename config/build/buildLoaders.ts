@@ -22,7 +22,13 @@ export function buildLoaders(isDev: boolean): webpack.RuleSetRule[] {
                 plugins: [
                     [
                         'i18next-extract',
-                        { keyAsDefaultValue: true, locales: ['en', 'ru'] },
+                        {
+                            keyAsDefaultValue: true,
+                            keyAsDefaultValueForDerivedKeys: false,
+                            locales: ['en', 'ru'],
+                            disableCache: true,
+                            outputPath: 'public/locales/{{locale}}/{{ns}}.json',
+                        },
                     ],
                 ],
             },

@@ -5,10 +5,11 @@ import cls from './LangSwitcher.module.scss';
 import AppButton from '../AppButton/AppButton';
 
 interface LangSwitcherProps {
-  className?: string;
+  className?: string,
+  short?: boolean
 }
 
-const LangSwitcher: FC<LangSwitcherProps> = ({ className }) => {
+const LangSwitcher: FC<LangSwitcherProps> = ({ className, short }) => {
     const { t, i18n } = useTranslation();
     const onToggle = () => {
         i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru');
@@ -18,7 +19,7 @@ const LangSwitcher: FC<LangSwitcherProps> = ({ className }) => {
             className={classNames(cls.langSwitcher, {}, [className])}
             onClick={onToggle}
         >
-            {t('lang_button')}
+            {short ? t('lang_button_short') : t('lang_button')}
         </AppButton>
     );
 };

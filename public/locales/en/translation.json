@@ -1,7 +1,10 @@
 {
-    "lang_button": "Translate on ru",
-    "error_page": "Something went wrong.",
-    "reload_page": "Reload page",
-    "main": "Main",
-    "about": "About"
+  "about": "About",
+  "btn_error": "btn_error",
+  "error_page": "Something went wrong.",
+  "lang_button": "Translate on ru",
+  "lang_button_short": "Ru",
+  "main": "Main",
+  "reload_page": "Reload page",
+  "title": "title"
 }

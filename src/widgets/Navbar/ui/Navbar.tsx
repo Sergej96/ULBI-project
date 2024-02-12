@@ -10,12 +10,7 @@ const Navbar: FC<NavbarProps> = () => {
     const { t } = useTranslation();
 
     return (
-        <div className={cls.navbar}>
-            <div className={cls.links}>
-                <AppLink to={RoutePath.main}>{t('main')}</AppLink>
-                <AppLink to={RoutePath.about}>{t('about')}</AppLink>
-            </div>
-        </div>
+        <div className={cls.navbar} />
     );
 };
 
