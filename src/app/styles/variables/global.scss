@@ -1,17 +1,26 @@
 :root {
-  --font-family-main: consolas, serif;
-  --font-size-m: 16px;
-  --font-line-m: 24px;
-  --font-m: var(--font-size-m) / var(--font-line-m) var(--font-family-main);
-  --font-size-l: 24px;
-  --font-line-l: 32px;
-  --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
-  --font-size-xl: 32px;
-  --font-line-xl: 40px;
-  --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-main);
+    --font-family-main: consolas, serif;
+    --font-size-m: 16px;
+    --font-line-m: 24px;
+    --font-m: var(--font-size-m) / var(--font-line-m) var(--font-family-main);
+    --font-size-l: 24px;
+    --font-line-l: 32px;
+    --font-l: var(--font-size-l) / var(--font-line-l) var(--font-family-main);
+    --font-size-xl: 32px;
+    --font-line-xl: 40px;
+    --font-xl: var(--font-size-xl) / var(--font-line-xl) var(--font-family-main);
+    --border-radius-m: 4px;
+    --border-radius-l: 8px;
+    --border-radius-xl: 12px;
 
-  /* sizes */
-  --height-navbar: 80px;
-  --width-sidebar: 300px;
-  --width-sidebar-collapsed: 80px;
+    /* sizes */
+    --height-navbar: 80px;
+    --width-sidebar: 300px;
+    --width-sidebar-collapsed: 80px;
+
+    /* z-index */
+    --z-index-modal: 10;
+
+    /* color */
+    --color-overlay: rgba(0, 0, 0, .4);
 }

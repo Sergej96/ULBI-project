@@ -17,7 +17,7 @@
         "ecmaVersion": "latest",
         "sourceType": "module"
     },
-    "plugins": ["@typescript-eslint", "react", "i18next"],
+    "plugins": ["@typescript-eslint", "react", "react-hooks", "i18next"],
     "rules": {
         "@typescript-eslint/no-unused-vars": "warn",
         "react/jsx-runtime": "off",
@@ -50,7 +50,9 @@
                 "markupOnly": true,
                 "ignoreAttribute": ["data-testid", "to"]
             }
-        ]
+        ],
+        "react-hooks/rules-of-hooks": "error",
+        "react-hooks/exhaustive-deps": "error"
     },
     "globals": {
         "__IS_DEV__": true
