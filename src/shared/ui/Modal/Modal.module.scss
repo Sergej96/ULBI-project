@@ -16,6 +16,11 @@
     scale: .5;
     opacity: .5;
     transition: all .3s;
+
+    &.dark {
+        background: var(--inverted-bg-color);
+        color: var(--inverted-primary-color);
+    }
 }
 
 .modal {

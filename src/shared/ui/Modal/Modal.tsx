@@ -4,6 +4,8 @@
 import React, { FC, useCallback, useEffect } from 'react';
 import cls from './Modal.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
+import Portal from '../Portal/Portal';
+import { useTheme } from 'app/providers/ThemeProvider';
 
 interface ModalProps {
     children: React.ReactNode;
@@ -16,11 +18,13 @@ const Modal: FC<ModalProps> = ({ children, isOpen = false, onClose }) => {
         [cls.opened]: isOpen,
     };
 
+    const { theme } = useTheme();
+
     const onCloseHandler = useCallback(
         (event: React.MouseEvent) => {
             if (
-                onClose &&
-                (event.target as Element).classList.contains(cls.overlay)
+                onClose
+                && (event.target as Element).classList.contains(cls.overlay)
             ) {
                 onClose();
             }
@@ -42,15 +46,17 @@ const Modal: FC<ModalProps> = ({ children, isOpen = false, onClose }) => {
         }
 
         return () => {
-            window.removeEventListener('keydows', onKeyDown);
+            window.removeEventListener('keydown', onKeyDown);
         };
     }, [isOpen, onKeyDown]);
     return (
-        <div className={classNames(cls.modal, mods)}>
-            <div className={cls.overlay} onClick={onCloseHandler}>
-                <div className={cls.content}>{children}</div>
+        <Portal>
+            <div className={classNames(cls.modal, mods)}>
+                <div className={cls.overlay} onClick={onCloseHandler}>
+                    <div className={classNames(cls.content, {}, [cls[theme]])}>{children}</div>
+                </div>
             </div>
-        </div>
+        </Portal>
     );
 };
 

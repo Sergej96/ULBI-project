@@ -6,7 +6,7 @@ interface PortalProps {
     fromElement?: HTMLElement;
 }
 
-const Portal: FC = (props:PortalProps) => {
+const Portal: FC<PortalProps> = (props) => {
     const {
         children,
         fromElement = document.body
