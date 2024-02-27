@@ -25,11 +25,15 @@ jobs:
               run: npm run build:prod
             - name: linting typescript
               run: npm run lint
+              if: always()
             - name: linting css
               run: npm run lint:style
+              if: always()
             - name: test unit
               run: npm run test:unit
+              if: always()
             - name: build storybook
               run: npm run sb:build
+              if: always()
             - name: test ui
               run: npm run test:ui:ci
