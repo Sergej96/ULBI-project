@@ -4,6 +4,7 @@ import cls from './AppButton.module.scss';
 
 export enum ButtonTheme {
     PRIMARY = 'primary',
+    INVERTED_COLOR='invertedColor',
     CLEAR = 'clear',
     OUTLINE = 'outline',
     BACKGROUND = 'background',

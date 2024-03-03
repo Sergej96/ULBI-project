@@ -1,12 +1,16 @@
 .button {
     padding: 6px 12px;
-    color: var(--inverted-primary-color);
+    color: var(--primary-color);
     cursor: pointer;
 }
 
 .primary {
     padding: 10px 20px;
     background-color: var(--primary-color);
+    color: var(--inverted-primary-color);
+}
+
+.invertedColor {
     color: var(--inverted-primary-color);
 }
 

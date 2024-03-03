@@ -21,7 +21,7 @@ const Navbar: FC<NavbarProps> = () => {
             <div className={cls.links}>
                 <AppButton
                     className={cls.links}
-                    theme={ButtonTheme.CLEAR}
+                    theme={ButtonTheme.INVERTED_COLOR}
                     onClick={onToggleModal}
                 >
                     {t('login')}
