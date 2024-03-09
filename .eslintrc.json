@@ -42,7 +42,7 @@
         "import/no-extraneous-dependencies": "off",
         "no-underscore-dangle": "off",
         "comma-dangle": "warn",
-        "linebreak-style": ["warn", "unix"],
+        "linebreak-style": ["warn", "windows"],
         "import/order": ["off"],
         "i18next/no-literal-string": [
             "error",
@@ -53,7 +53,8 @@
         ],
         "implicit-arrow-linebreak": "off",
         "react-hooks/rules-of-hooks": "error",
-        "react-hooks/exhaustive-deps": "error"
+        "react-hooks/exhaustive-deps": "error",
+        "no-param-reassign": "off"
     },
     "globals": {
         "__IS_DEV__": true

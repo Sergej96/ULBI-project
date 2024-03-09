@@ -22,15 +22,14 @@ const config: Config = {
     ],
     rootDir: '../../',
     testEnvironment: 'jsdom',
-    modulePaths: [
-        '<rootDir>src',
-    ],
+    modulePaths: ['<rootDir>src'],
     moduleNameMapper: {
         '\\.(css|scss)$': 'identity-obj-proxy',
         '\\.svg': path.resolve(__dirname, '__mocks__/svg.tsx'),
     },
     testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
     setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
+    globals: { __IS_DEV__: true },
 };
 
 export default config;
