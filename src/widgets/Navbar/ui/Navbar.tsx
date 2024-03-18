@@ -1,9 +1,6 @@
 import { FC, useCallback, useState } from 'react';
-import AppLink from 'shared/ui/AppLink/AppLink';
 import cls from './Navbar.module.scss';
 import { useTranslation } from 'react-i18next';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import Modal from 'shared/ui/Modal/Modal';
 import AppButton, { ButtonTheme } from 'shared/ui/AppButton/AppButton';
 import Portal from 'shared/ui/Portal/Portal';
 import { AuthModal } from 'features/AuthByUsername/ui/AuthModal/AuthModal';

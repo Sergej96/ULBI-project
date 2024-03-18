@@ -8,7 +8,7 @@ const meta: Meta<typeof AuthModal> = {
     component: AuthModal,
     argTypes: {},
     args: {
-        isOpen: true
+        isOpen: true,
     },
 };
 

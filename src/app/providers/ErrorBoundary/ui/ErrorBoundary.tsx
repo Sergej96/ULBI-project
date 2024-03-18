@@ -18,14 +18,17 @@ export class ErrorBoundary extends React.Component<
         this.state = { hasError: false };
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
     static getDerivedStateFromError(error: Error) {
         // Обновить состояние с тем, чтобы следующий рендер показал запасной UI.
         return { hasError: true };
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
     componentDidCatch(error: Error, errorInfo: ErrorInfo) {
         // Можно также сохранить информацию об ошибке в соответствующую службу журнала ошибок
-        console.log(error, errorInfo);
+        // eslint-disable-next-line no-alert
+        alert(error.message);
     }
 
     render() {

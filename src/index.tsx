@@ -22,6 +22,6 @@ if (rootElement) {
                     </ErrorBoundary>
                 </BrowserRouter>
             </StoreProvider>
-        </StrictMode>
+        </StrictMode>,
     );
 }

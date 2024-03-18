@@ -29,7 +29,7 @@ const Modal: FC<ModalProps> = ({ children, isOpen = false, onClose }) => {
                 onClose();
             }
         },
-        [onClose]
+        [onClose],
     );
     const onKeyDown = useCallback(
         (event: KeyboardEvent) => {
@@ -37,7 +37,7 @@ const Modal: FC<ModalProps> = ({ children, isOpen = false, onClose }) => {
                 onClose();
             }
         },
-        [onClose]
+        [onClose],
     );
 
     useEffect(() => {

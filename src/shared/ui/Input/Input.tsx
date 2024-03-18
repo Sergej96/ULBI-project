@@ -3,7 +3,6 @@ import React, {
     InputHTMLAttributes,
     useEffect,
     useRef,
-    useState,
 } from 'react';
 import cls from './Input.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';

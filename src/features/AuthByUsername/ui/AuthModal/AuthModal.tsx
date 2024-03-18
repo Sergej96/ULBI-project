@@ -1,5 +1,4 @@
 import { FC, useEffect, useState } from 'react';
-import cls from './AuthModal.module.scss';
 import Modal from 'shared/ui/Modal/Modal';
 import AuthForm from '../AuthForm/AuthForm';
 

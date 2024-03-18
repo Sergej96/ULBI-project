@@ -20,7 +20,8 @@
         "lint:style": "npx stylelint \"**/*.scss\"",
         "lint:style:fix": "npx stylelint \"**/*.scss\" --fix",
         "sb": "storybook dev -p 6006 -c ./config/storybook",
-        "sb:build": "storybook build -c ./config/storybook"
+        "sb:build": "storybook build -c ./config/storybook",
+        "prepare": "husky install"
     },
     "author": "",
     "license": "ISC",
@@ -91,7 +92,8 @@
         "webpack": "^5.89.0",
         "webpack-bundle-analyzer": "^4.10.1",
         "webpack-cli": "^5.1.4",
-        "webpack-dev-server": "^4.15.1"
+        "webpack-dev-server": "^4.15.1",
+        "husky": "^8.0.0"
     },
     "dependencies": {
         "-": "^0.0.1",
