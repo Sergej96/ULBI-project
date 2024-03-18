@@ -1,4 +1,4 @@
-import { Counter } from 'entities/Counter';
+import { Counter } from '../../../entities/Counter';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import AppButton from 'shared/ui/AppButton/AppButton';

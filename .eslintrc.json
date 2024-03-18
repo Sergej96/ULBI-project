@@ -42,7 +42,7 @@
         "import/no-extraneous-dependencies": "off",
         "no-underscore-dangle": "off",
         "comma-dangle": "warn",
-        "linebreak-style": ["warn", "windows"],
+        "linebreak-style": ["off"],
         "import/order": ["off"],
         "i18next/no-literal-string": [
             "error",
