@@ -1,6 +1,7 @@
 import React, {
     FC,
     InputHTMLAttributes,
+    memo,
     useEffect,
     useRef,
 } from 'react';
@@ -53,4 +54,4 @@ const Input: FC<InputProps> = ({
     );
 };
 
-export default Input;
+export default memo(Input);

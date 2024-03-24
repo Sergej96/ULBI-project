@@ -1,10 +1,12 @@
 {
   "about": "About",
+  "auth_modal_title": "auth_modal_title",
   "btn_error": "btn_error",
   "error_page": "Something went wrong.",
   "lang_button": "Translate on ru",
   "lang_button_short": "Ru",
-  "login": "login",
+  "login": "Login",
+  "logout": "Logout",
   "main": "Main",
   "reload_page": "Reload page",
   "title": "title"

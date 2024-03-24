@@ -29,14 +29,17 @@ const AppButton: FC<AppButtonProps> = ({
     theme = ButtonTheme.CLEAR,
     square = false,
     size = ButtonSize.M,
+    disabled,
     ...otherProps
 }) => {
     const mods: Record<string, boolean> = {
         [cls.square]: square,
+        [cls.disabled]: disabled,
     };
     return (
         <button
             type="button"
+            disabled={disabled}
             className={classNames(cls.button, mods, [
                 cls[theme],
                 cls[size],
