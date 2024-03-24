@@ -1,5 +1,5 @@
 /* eslint-disable no-param-reassign */
-import webpack from 'webpack';
+import webpack, { DefinePlugin } from 'webpack';
 import { BuildPaths } from '../build/types/config';
 import path from 'path';
 import buildCssLoader from '../build/loaders/buildCssLoader';
@@ -16,9 +16,9 @@ export default ({ config }: { config: webpack.Configuration }) => {
     if (config.module?.rules) {
         config.module.rules = config.module.rules.map((rule) => {
             if (
-                rule
-                && typeof rule !== 'string'
-                && /svg/.test(rule.test as string)
+                rule &&
+                typeof rule !== 'string' &&
+                /svg/.test(rule.test as string)
             ) {
                 return { ...rule, exclude: /\.svg/ };
             }
@@ -32,6 +32,11 @@ export default ({ config }: { config: webpack.Configuration }) => {
     config.resolve?.extensions?.push('.ts', '.tsx');
 
     config.module?.rules?.push(buildCssLoader(true));
+    config.plugins?.push(
+        new DefinePlugin({
+            __IS_DEV__: true,
+        }),
+    );
 
     return config;
 };
