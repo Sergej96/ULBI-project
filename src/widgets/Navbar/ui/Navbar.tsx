@@ -57,7 +57,9 @@ const Navbar: FC<NavbarProps> = () => {
             </div>
 
             <Portal>
-                <AuthModal isOpen={isAuthModal} onClose={onClose} lazy />
+                {isAuthModal && (
+                    <AuthModal isOpen={isAuthModal} onClose={onClose} lazy />
+                )}
             </Portal>
         </div>
     );

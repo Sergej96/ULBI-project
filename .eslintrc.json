@@ -55,7 +55,10 @@
         "react-hooks/rules-of-hooks": "error",
         "react-hooks/exhaustive-deps": "error",
         "no-param-reassign": "off",
-        "consistent-return": "off"
+        "consistent-return": "off",
+        "object-curly-newline": "off",
+        "@typescript-eslint/ban-ts-comment": "off",
+        "operator-linebreak": ["warn", "after"]
     },
     "globals": {
         "__IS_DEV__": true

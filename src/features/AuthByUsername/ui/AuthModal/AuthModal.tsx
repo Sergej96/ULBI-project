@@ -1,6 +1,7 @@
-import { FC, useEffect, useState } from 'react';
+import { FC, Suspense, useEffect, useState } from 'react';
 import Modal from 'shared/ui/Modal/Modal';
-import AuthForm from '../AuthForm/AuthForm';
+import { AuthFormAsync } from '../AuthForm/AuthForm.async';
+import Loader from 'shared/ui/Loader/Loader';
 
 interface AuthModalProps {
     isOpen: boolean;
@@ -20,7 +21,9 @@ export const AuthModal: FC<AuthModalProps> = ({ isOpen, onClose, lazy }) => {
     if (lazy && !isMounted) return null;
     return (
         <Modal isOpen={isOpen} onClose={onClose}>
-            <AuthForm />
+            <Suspense fallback={<Loader />}>
+                <AuthFormAsync />
+            </Suspense>
         </Modal>
     );
 };

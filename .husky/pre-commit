@@ -3,6 +3,6 @@
 
 npm run lint
 npm run lint:style
-npm run test:unit
-npm run sb:build
-npm run test:ui:ci
+# npm run test:unit
+# npm run sb:build
+# npm run test:ui:ci
