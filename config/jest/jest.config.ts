@@ -29,7 +29,7 @@ const config: Config = {
     },
     testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
     setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
-    globals: { __IS_DEV__: true },
+    globals: { __IS_DEV__: true, __API__: '' },
 };
 
 export default config;
