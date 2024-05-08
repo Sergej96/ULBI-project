@@ -22,9 +22,18 @@
       {
         "id": 1,
         "username": "admin",
-        "password": "123"
+        "password": "1234"
       }
     ],
-    "profile": { "name": "typicode" }
+    "profile": { 
+      "first": "Test",
+      "lastname": "Testing",
+      "age": 22,
+      "currency": "RUB",
+      "country": "Belarusian",
+      "city": "Minsk",
+      "username": "admin",
+      "avatar": "https://static.vecteezy.com/system/resources/previews/005/570/253/original/trendy-gentleman-concepts-vector.jpg"
+     }
   }
   

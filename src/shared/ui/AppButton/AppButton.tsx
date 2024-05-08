@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, FC } from 'react';
+import { ButtonHTMLAttributes, FC, memo } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 import cls from './AppButton.module.scss';
 
@@ -23,33 +23,35 @@ interface AppButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     size?: ButtonSize;
 }
 
-const AppButton: FC<AppButtonProps> = ({
-    children,
-    className,
-    theme = ButtonTheme.CLEAR,
-    square = false,
-    size = ButtonSize.M,
-    disabled,
-    ...otherProps
-}) => {
-    const mods: Record<string, boolean> = {
-        [cls.square]: square,
-        [cls.disabled]: disabled,
-    };
-    return (
-        <button
-            type="button"
-            disabled={disabled}
-            className={classNames(cls.button, mods, [
-                cls[theme],
-                cls[size],
-                className,
-            ])}
-            {...otherProps}
-        >
-            {children}
-        </button>
-    );
-};
+const AppButton = memo(
+    ({
+        children,
+        className,
+        theme = ButtonTheme.CLEAR,
+        square = false,
+        size = ButtonSize.M,
+        disabled,
+        ...otherProps
+    }: AppButtonProps) => {
+        const mods: Record<string, boolean> = {
+            [cls.square]: square,
+            [cls.disabled]: disabled,
+        };
+        return (
+            <button
+                type="button"
+                disabled={disabled}
+                className={classNames(cls.button, mods, [
+                    cls[theme],
+                    cls[size],
+                    className,
+                ])}
+                {...otherProps}
+            >
+                {children}
+            </button>
+        );
+    },
+);
 
 export default AppButton;

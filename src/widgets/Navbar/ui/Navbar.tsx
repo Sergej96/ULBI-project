@@ -1,4 +1,4 @@
-import { FC, useCallback, useState } from 'react';
+import { memo, useCallback, useState } from 'react';
 import cls from './Navbar.module.scss';
 import { useTranslation } from 'react-i18next';
 import AppButton, { ButtonTheme } from 'shared/ui/AppButton/AppButton';
@@ -8,9 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entities/User';
 import { AppDispatch } from 'app/providers/StoreProvider/config/store';
 
-interface NavbarProps {}
-
-const Navbar: FC<NavbarProps> = () => {
+const Navbar = memo(() => {
     const { t } = useTranslation();
     const dispatch = useDispatch<AppDispatch>();
     const [isAuthModal, setIsAuthModal] = useState(false);
@@ -63,6 +61,6 @@ const Navbar: FC<NavbarProps> = () => {
             </Portal>
         </div>
     );
-};
+});
 
 export default Navbar;

@@ -1,5 +1,4 @@
-import { FC, useState } from 'react';
-import { useTranslation } from 'react-i18next';
+import { memo, useState } from 'react';
 import cls from './Sidebar.module.scss';
 
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -9,16 +8,11 @@ import AppButton, {
 } from 'shared/ui/AppButton/AppButton';
 import ThemeSwitcher from 'shared/ui/ThemeSwitcher/ThemeSwitcher';
 import LangSwitcher from 'shared/ui/LangSwitcher/LangSwitcher';
-import AppLink from 'shared/ui/AppLink/AppLink';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
-import MainIcon from 'shared/assets/icons/main.svg';
-import AboutIcon from 'shared/assets/icons/about.svg';
+import { SidebarItemList } from 'widgets/Sidebar/model/items';
+import { SidebarItem } from '../SidebarItem/SidebarItem';
 
-interface SidebarProps {}
-
-const Sidebar: FC<SidebarProps> = () => {
+const Sidebar = memo(() => {
     const [collapsed, setCollapsed] = useState(false);
-    const { t } = useTranslation();
     const onToggle = () => {
         setCollapsed((prev) => !prev);
     };
@@ -28,14 +22,13 @@ const Sidebar: FC<SidebarProps> = () => {
             className={classNames(cls.sidebar, { [cls.collapsed]: collapsed })}
         >
             <div className={cls.menu}>
-                <AppLink className={cls.menuItem} to={RoutePath.main}>
-                    <MainIcon className={cls.icon} />
-                    <span className={cls.menuName}>{t('main')}</span>
-                </AppLink>
-                <AppLink className={cls.menuItem} to={RoutePath.about}>
-                    <AboutIcon className={cls.icon} />
-                    <span className={cls.menuName}>{t('about')}</span>
-                </AppLink>
+                {SidebarItemList.map((item) => (
+                    <SidebarItem
+                        key={item.path}
+                        item={item}
+                        collapsed={collapsed}
+                    />
+                ))}
             </div>
             <AppButton
                 data-testid="sidebar-toggle"
@@ -53,6 +46,6 @@ const Sidebar: FC<SidebarProps> = () => {
             </div>
         </div>
     );
-};
+});
 
 export default Sidebar;

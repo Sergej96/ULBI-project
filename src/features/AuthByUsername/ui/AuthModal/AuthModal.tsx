@@ -22,7 +22,7 @@ export const AuthModal: FC<AuthModalProps> = ({ isOpen, onClose, lazy }) => {
     return (
         <Modal isOpen={isOpen} onClose={onClose}>
             <Suspense fallback={<Loader />}>
-                <AuthFormAsync />
+                <AuthFormAsync onSuccess={onClose} />
             </Suspense>
         </Modal>
     );

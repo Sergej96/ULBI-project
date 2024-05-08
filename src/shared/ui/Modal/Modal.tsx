@@ -1,6 +1,5 @@
-/* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
-/* eslint-disable i18next/no-literal-string */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
 import React, { FC, useCallback, useEffect } from 'react';
 import cls from './Modal.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -23,8 +22,8 @@ const Modal: FC<ModalProps> = ({ children, isOpen = false, onClose }) => {
     const onCloseHandler = useCallback(
         (event: React.MouseEvent) => {
             if (
-                onClose
-                && (event.target as Element).classList.contains(cls.overlay)
+                onClose &&
+                (event.target as Element).classList.contains(cls.overlay)
             ) {
                 onClose();
             }
@@ -53,7 +52,9 @@ const Modal: FC<ModalProps> = ({ children, isOpen = false, onClose }) => {
         <Portal>
             <div className={classNames(cls.modal, mods)}>
                 <div className={cls.overlay} onClick={onCloseHandler}>
-                    <div className={classNames(cls.content, {}, [cls[theme]])}>{children}</div>
+                    <div className={classNames(cls.content, {}, [cls[theme]])}>
+                        {children}
+                    </div>
                 </div>
             </div>
         </Portal>

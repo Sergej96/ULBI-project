@@ -21,33 +21,12 @@
     gap: 10px;
 }
 
-.menuItem {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-}
-
-.menuName {
-    opacity: 1;
-    transition: all 0.3s;
-    text-wrap: nowrap;
-}
-
-.icon {
-    fill: var(--inverted-primary-color);
-}
-
 .collapsed {
     width: var(--width-sidebar-collapsed);
 
     .switchers {
         flex-direction: column;
         align-items: center;
-    }
-
-    .menuName {
-        width: 0;
-        opacity: 0;
     }
 }
 

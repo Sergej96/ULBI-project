@@ -3,10 +3,9 @@ import cls from './AuthForm.module.scss';
 import AppButton, { ButtonTheme } from 'shared/ui/AppButton/AppButton';
 import { useTranslation } from 'react-i18next';
 import Input from 'shared/ui/Input/Input';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { loginActions, loginReducer } from '../../model/slice/loginSlice';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
-import { AppDispatch } from 'app/providers/StoreProvider/config/store';
 import { getLoginUsername } from '../../model/selectors/getLoginUsername';
 import { getLoginPassword } from '../../model/selectors/getLoginPassword';
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading';
@@ -15,16 +14,19 @@ import {
     DynamicModuleLoader,
     ReducerList,
 } from 'shared/lib/components/DynamicModuleLoader';
+import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch';
 
-export interface AuthFormProps {}
+export interface AuthFormProps {
+    onSuccess: () => void;
+}
 
 const initialReducers: ReducerList = {
     loginForm: loginReducer,
 };
 
-const AuthForm: FC<AuthFormProps> = () => {
+const AuthForm: FC<AuthFormProps> = ({ onSuccess }) => {
     const { t } = useTranslation();
-    const dispatch = useDispatch<AppDispatch>();
+    const dispatch = useAppDispatch();
     const username = useSelector(getLoginUsername);
     const password = useSelector(getLoginPassword);
     const isLoading = useSelector(getLoginIsLoading);
@@ -45,12 +47,17 @@ const AuthForm: FC<AuthFormProps> = () => {
     );
 
     const onSubmitLogin = useCallback(
-        (event: FormEvent<HTMLFormElement>) => {
+        async (event: FormEvent<HTMLFormElement>) => {
             event.preventDefault();
 
-            dispatch(loginByUsername({ username, password }));
+            const result = await dispatch(
+                loginByUsername({ username, password }),
+            );
+            if (result.meta.requestStatus === 'fulfilled') {
+                onSuccess();
+            }
         },
-        [dispatch, password, username],
+        [dispatch, onSuccess, password, username],
     );
 
     return (
