@@ -1,4 +1,4 @@
-import React, { InputHTMLAttributes, memo, useEffect, useRef } from 'react';
+import React, { InputHTMLAttributes, Ref, memo, useEffect, useRef } from 'react';
 import cls from './Input.module.scss';
 import { classNames } from 'shared/lib/classNames/classNames';
 
@@ -24,7 +24,7 @@ const Input = memo(
         label,
         autoFocus,
     }: InputProps) => {
-        const inputRef = useRef(null);
+        const inputRef = useRef<HTMLInputElement>(null);
         const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
             onChange?.(event.target.value);
         };

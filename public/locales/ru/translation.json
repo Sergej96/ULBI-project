@@ -3,12 +3,16 @@
   "about": "О нас",
   "auth_modal_title": "auth_modal_title",
   "btn_error": "btn_error",
+  "edit": "edit",
   "error_page": "Что-то пошло не так.",
   "lang_button": "Перевести на en",
   "lang_button_short": "En",
+  "lastname": "lastname",
   "login": "Войти",
   "logout": "Выйти",
   "main": "Главная",
+  "name": "name",
   "reload_page": "Перезагрузить страницу",
-  "title": "title"
+  "title": "title",
+  "title_profile": "title_profile"
 }

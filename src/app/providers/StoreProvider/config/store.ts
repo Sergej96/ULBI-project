@@ -11,8 +11,8 @@ export function createReduxStore(
     navigate?: (to: To, options?: NavigateOptions) => void,
 ) {
     const rootReducer: ReducersMapObject<StateSchema> = {
-        counter: counterReducer,
         user: userReducer,
+        counter: counterReducer,
     };
 
     const reducerManager = createReducerManager(rootReducer);
