@@ -1,25 +1,26 @@
-import { FC } from 'react';
-import AppButton from 'shared/ui/AppButton/AppButton';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
+import { Button } from 'shared/ui/Button/Button';
 import cls from './ErrorPage.module.scss';
-import { useNavigate } from 'react-router-dom';
 
-interface ErrorPageProps {}
+interface ErrorPageProps {
+    className?: string;
+}
 
-const ErrorPage: FC<ErrorPageProps> = () => {
+export const ErrorPage = ({ className }: ErrorPageProps) => {
     const { t } = useTranslation();
-    const navigate = useNavigate();
 
     const reloadPage = () => {
-        navigate(0);
+        // eslint-disable-next-line no-restricted-globals
+        location.reload();
     };
+
     return (
-        <div className={classNames('app', {}, [cls.ErrorPage])}>
-            <h1 className={cls.title}>{t('error_page')}</h1>
-            <AppButton onClick={reloadPage}>{t('reload_page')}</AppButton>
+        <div className={classNames(cls.ErrorPage, {}, [className])}>
+            <p>{t('Произошла непредвиденная ошибка')}</p>
+            <Button onClick={reloadPage}>
+                {t('Обновить страницу')}
+            </Button>
         </div>
     );
 };
-
-export default ErrorPage;

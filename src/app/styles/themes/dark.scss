@@ -1,8 +1,8 @@
-:root :has(.dark) {
-    --bg-color: #0e43d3;
-    --inverted-bg-color: #ccc;
-    --primary-color: #0ed31e;
-    --inverted-primary-color: #0e43d3;
-    --seconder-color: #55f846;
-    --inverted-seconder-color: #6198eb;
+.app_dark_theme {
+    --bg-color: #090949;
+    --inverted-bg-color: #e8e8ea;
+    --primary-color: #04ff04;
+    --secondary-color: #049604;
+    --inverted-primary-color: #0232c2;
+    --inverted-secondary-color: #0452ff;
 }

@@ -1,28 +1,24 @@
 @import "reset";
 @import "variables/global";
+@import "themes/normal";
 @import "themes/dark";
-@import "themes/default";
 
-body {
-  font: var(--font-m);
-  color: var(--primary-color);
-  
+.app,
+.app_modal {
+    font: var(--font-m);
+    color: var(--primary-color);
 }
 
 .app {
-  min-height: 100dvh;
-  background: var(--bg-color);
+    background: var(--bg-color);
+    min-height: 100vh;
 }
 
 .content-page {
-  display: flex;
+    display: flex;
 }
 
 .page-wrapper {
-  flex-grow: 1;
-  padding: 20px;
-}
-
-.ps-2 {
-  padding-left: 16px;
+    flex-grow: 1;
+    padding: 20px;
 }

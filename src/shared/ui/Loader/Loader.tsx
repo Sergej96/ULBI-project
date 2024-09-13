@@ -1,20 +1,15 @@
-import { FC, memo } from 'react';
+import { classNames } from 'shared/lib/classNames/classNames';
 import './Loader.scss';
 
-interface LoaderProps {}
+interface LoaderProps {
+    className?: string;
+}
 
-const Loader: FC<LoaderProps> = memo(() => (
-    <div className="lds-grid">
-        <div />
-        <div />
-        <div />
-        <div />
-        <div />
+export const Loader = ({ className }: LoaderProps) => (
+    <div className={classNames('lds-ellipsis', {}, [className])}>
         <div />
         <div />
         <div />
         <div />
     </div>
-));
-
-export default Loader;
+);

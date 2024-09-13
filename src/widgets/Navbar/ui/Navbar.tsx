@@ -1,24 +1,27 @@
-import { memo, useCallback, useState } from 'react';
-import cls from './Navbar.module.scss';
+import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import AppButton, { ButtonTheme } from 'shared/ui/AppButton/AppButton';
-import Portal from 'shared/ui/Portal/Portal';
-import { AuthModal } from 'features/AuthByUsername';
+import React, { memo, useCallback, useState } from 'react';
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { LoginModal } from 'features/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entities/User';
-import { AppDispatch } from 'app/providers/StoreProvider/config/store';
+import cls from './Navbar.module.scss';
 
-const Navbar = memo(() => {
+interface NavbarProps {
+    className?: string;
+}
+
+export const Navbar = memo(({ className }: NavbarProps) => {
     const { t } = useTranslation();
-    const dispatch = useDispatch<AppDispatch>();
     const [isAuthModal, setIsAuthModal] = useState(false);
-    const user = useSelector(getUserAuthData);
+    const authData = useSelector(getUserAuthData);
+    const dispatch = useDispatch();
 
-    const onClose = useCallback(() => {
+    const onCloseModal = useCallback(() => {
         setIsAuthModal(false);
     }, []);
 
-    const onOpen = useCallback(() => {
+    const onShowModal = useCallback(() => {
         setIsAuthModal(true);
     }, []);
 
@@ -26,41 +29,35 @@ const Navbar = memo(() => {
         dispatch(userActions.logout());
     }, [dispatch]);
 
-    if (user) {
+    if (authData) {
         return (
-            <div className={cls.navbar}>
-                <div className={cls.links}>
-                    <AppButton
-                        className={cls.links}
-                        theme={ButtonTheme.INVERTED_COLOR}
-                        onClick={onLogout}
-                    >
-                        {t('logout')}
-                    </AppButton>
-                </div>
+            <div className={classNames(cls.Navbar, {}, [className])}>
+                <Button
+                    theme={ButtonTheme.CLEAR_INVERTED}
+                    className={cls.links}
+                    onClick={onLogout}
+                >
+                    {t('Выйти')}
+                </Button>
             </div>
         );
     }
 
     return (
-        <div className={cls.navbar}>
-            <div className={cls.links}>
-                <AppButton
-                    className={cls.links}
-                    theme={ButtonTheme.INVERTED_COLOR}
-                    onClick={onOpen}
-                >
-                    {t('login')}
-                </AppButton>
-            </div>
-
-            <Portal>
-                {isAuthModal && (
-                    <AuthModal isOpen={isAuthModal} onClose={onClose} lazy />
-                )}
-            </Portal>
+        <div className={classNames(cls.Navbar, {}, [className])}>
+            <Button
+                theme={ButtonTheme.CLEAR_INVERTED}
+                className={cls.links}
+                onClick={onShowModal}
+            >
+                {t('Войти')}
+            </Button>
+            {isAuthModal && (
+                <LoginModal
+                    isOpen={isAuthModal}
+                    onClose={onCloseModal}
+                />
+            )}
         </div>
     );
 });
-
-export default Navbar;

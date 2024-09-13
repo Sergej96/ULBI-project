@@ -1,5 +1,5 @@
-import React, { ErrorInfo, ReactNode } from 'react';
-import { ErrorPage } from 'widgets';
+import React, { ErrorInfo, ReactNode, Suspense } from 'react';
+import { ErrorPage } from 'widgets/ErrorPage/ui/ErrorPage';
 
 interface ErrorBoundaryProps {
     children: ReactNode;
@@ -9,32 +9,38 @@ interface ErrorBoundaryState {
     hasError: boolean;
 }
 
-export class ErrorBoundary extends React.Component<
-    ErrorBoundaryProps,
-    ErrorBoundaryState
-> {
+class ErrorBoundary
+    extends React.Component<ErrorBoundaryProps, ErrorBoundaryState> {
     constructor(props: ErrorBoundaryProps) {
         super(props);
         this.state = { hasError: false };
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
     static getDerivedStateFromError(error: Error) {
-        // Обновить состояние с тем, чтобы следующий рендер показал запасной UI.
+        // Update state so the next render will show the fallback UI.
         return { hasError: true };
     }
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars, no-unused-vars
     componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-        // Можно также сохранить информацию об ошибке в соответствующую службу журнала ошибок
-        // eslint-disable-next-line no-alert
-        alert(error.message);
+        // You can also log the error to an error reporting service
+        console.log(error, errorInfo);
     }
 
     render() {
         const { hasError } = this.state;
         const { children } = this.props;
 
-        return hasError ? <ErrorPage /> : children;
+        if (hasError) {
+            // You can render any custom fallback UI
+            return (
+                <Suspense fallback="">
+                    <ErrorPage />
+                </Suspense>
+            );
+        }
+
+        return children;
     }
 }
+
+export default ErrorBoundary;
