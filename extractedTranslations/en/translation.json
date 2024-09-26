@@ -1,18 +1,28 @@
 {
+  "Country": "Country",
   "Lorem ipsum dolor sit amet, consectetur adipisicing elit": {
     " Aliquid commodi consequatur eligendi impedit incidunt necessitatibus possimus quis saepe sunt totam": {
       "": ""
     }
   },
   "PROFILE PAGE": "",
+  "age": "age",
+  "avatar": "avatar",
+  "cancel": "cancel",
+  "city": "city",
+  "currency": "currency",
   "decrement": "decrement",
   "edit": "edit",
+  "error": "error",
   "firstName": "firstName",
   "firtName": "firtName",
   "increment": "increment",
   "lastName": "lastName",
+  "save": "save",
   "throw error": "throw error",
   "title": "title",
+  "tryAgainLater": "tryAgainLater",
+  "username": "username",
   "Введите username": "Введите username",
   "Введите пароль": "Введите пароль",
   "Войти": "Войти",

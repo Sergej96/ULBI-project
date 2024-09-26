@@ -1,6 +1,9 @@
 {
-    "title": "Profile",
-    "edit": "Edit",
+    "Профиль": "Profile",
     "firstName": "First Name",
-    "lastName": "Last Name"
+    "lastName": "Last Name",
+    "city": "City",
+    "age": "Age",
+    "username": "Username",
+    "avatar": "Avatar"
 }
