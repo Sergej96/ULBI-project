@@ -25,9 +25,8 @@ export const ProfilePageHeader: FC<ProfilePageHeaderProps> = ({ className }) => 
         dispatch(profileActions.cancelEdit());
     }, [dispatch]);
 
-    const onSave = useCallback(async () => {
-        await dispatch(updateProfileData());
-        dispatch(profileActions.cancelEdit());
+    const onSave = useCallback(() => {
+        dispatch(updateProfileData());
     }, [dispatch]);
 
     return (

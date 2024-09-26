@@ -12,14 +12,17 @@ import {
     getProfileForm,
     getProfileIsLoading,
     getProfileReadonly,
+    getProfileValidErrors,
     profileActions,
     profileReducer,
+    ValidateProfileError,
 } from 'entities/Profile';
 import { useCallback, useEffect } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
+import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 const reducers: ReducersList = {
@@ -37,6 +40,15 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     const error = useSelector(getProfileError);
     const isLoading = useSelector(getProfileIsLoading);
     const readonly = useSelector(getProfileReadonly);
+    const validateErrors = useSelector(getProfileValidErrors);
+
+    const validateErrorsTranslations: Record<ValidateProfileError, string> = {
+        [ValidateProfileError.SERVER_ERROR]: t('serverError'),
+        [ValidateProfileError.INCORRECT_USER_DATA]: t('incorrectUserData'),
+        [ValidateProfileError.INCORRECT_AGE]: t('incorrectAge'),
+        [ValidateProfileError.INCORRECT_COUNTRY]: t('incorrectCountry'),
+        [ValidateProfileError.NO_DATA]: t('noData'),
+    };
 
     const onChangeFirstname = useCallback(
         (value?: string) => {
@@ -101,6 +113,14 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <div className={classNames('', {}, [className])}>
                 <ProfilePageHeader />
+                {validateErrors?.length &&
+                    validateErrors.map((err) => (
+                        <Text
+                            theme={TextTheme.ERROR}
+                            key={err}
+                            text={validateErrorsTranslations[err]}
+                        />
+                    ))}
                 <ProfileCard
                     data={formData}
                     error={error}
