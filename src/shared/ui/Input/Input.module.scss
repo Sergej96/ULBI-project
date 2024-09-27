@@ -18,8 +18,8 @@
         outline: none;
     }
 
-    &[type='number']::-webkit-outer-spin-button,
-    &[type='number']::-webkit-inner-spin-button {
+    &[type="number"]::-webkit-outer-spin-button,
+    &[type="number"]::-webkit-inner-spin-button {
         appearance: none;
     }
 }
