@@ -1,0 +1,34 @@
+.root {
+    min-height: 100%;
+}
+
+.skeleton {
+    display: grid;
+    gap: 16px;
+
+    & :first-child {
+        justify-self: center;
+        margin-bottom: 2rem;
+    }
+}
+
+.articleDetails {
+    display: grid;
+
+    & > :first-child {
+        justify-self: center;
+        margin-bottom: 2rem;
+    }
+}
+
+.articleInfo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.block {
+    margin-top: 1rem;
+    width: 100%;
+    overflow: auto;
+}
