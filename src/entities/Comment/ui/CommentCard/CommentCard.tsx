@@ -29,7 +29,7 @@ export const CommentCard = memo(({ comment, isLoading, className = '' }: Comment
   return (
       <div className={classNames(cls.commentCard, {}, [className])}>
           <div className={cls.header}>
-              {comment.user.avatar ?? <Avatar size={30} src={comment.user.avatar} />}
+              {comment.user.avatar ? <Avatar size={30} src={comment.user.avatar} /> : null}
               <Text title={comment.user.username} />
           </div>
           <Text className={cls.commentText} text={comment.text} />
