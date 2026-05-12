@@ -4,6 +4,8 @@ import { useTranslation } from 'react-i18next';
 import { memo } from 'react';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Skeleton } from 'shared/ui/Skeleot/Skeleton';
+import { AppLink } from 'shared/ui/AppLink/AppLink';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Comment } from '../../modules/types/comment';
 import cls from './CommentCard.module.scss';
 
@@ -28,10 +30,10 @@ export const CommentCard = memo(({ comment, isLoading, className = '' }: Comment
   }
   return (
       <div className={classNames(cls.commentCard, {}, [className])}>
-          <div className={cls.header}>
+          <AppLink to={`${RoutePath.profile}${comment.user.id}`} className={cls.header}>
               {comment.user.avatar ? <Avatar size={30} src={comment.user.avatar} /> : null}
               <Text title={comment.user.username} />
-          </div>
+          </AppLink>
           <Text className={cls.commentText} text={comment.text} />
       </div>
   );

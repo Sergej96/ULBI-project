@@ -22,7 +22,7 @@ export const CommentLsit = memo(({ comments, isLoading, error, className = '' }:
   return (
       <div className={classNames(className)}>
           {comments?.length ?
-            comments.map((comment) => <CommentCard comment={comment} isLoading={isLoading} />) :
+            comments.map((comment) => <CommentCard key={comment.id} comment={comment} isLoading={isLoading} />) :
             <Text text={t('Комментарии отсутсвуют')} />}
       </div>
   );
