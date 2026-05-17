@@ -49,6 +49,7 @@ module.exports = {
         'operator-linebreak': 'off',
         'no-undef': 'off',
         'react/jsx-wrap-multilines': 'off',
+        'react/no-array-index-key': 'off',
     },
     globals: {
         __IS_DEV__: true,
